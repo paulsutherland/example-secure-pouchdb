@@ -18,10 +18,10 @@ PouchDB.sync(local, remote, { live: true, retry: true })
   .on('error', err => console.error(Error({ output: err, message: 'error' })))
   .on('denied', err => console.error(Error({ output: err, message: 'denied' })))
 
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < 10; i++) {
   local.put({
     _id: `mydoc ${i}`,
-    title: 'My New Doc'
+    title: `My New Doc number ${i}`
   }).then(function (response) {
     // handle response
   }).catch(function (err) {
